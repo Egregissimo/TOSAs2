@@ -8,4 +8,4 @@ directories:
 - $HOME/.m2
 script:
 - cd restaurant-manager
-- mvn compile test package
+- mvn compile test package jacoco:report coveralls:report

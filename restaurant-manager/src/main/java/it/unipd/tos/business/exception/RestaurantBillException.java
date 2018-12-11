@@ -7,6 +7,6 @@ package it.unipd.tos.business.exception;
 public class RestaurantBillException extends Throwable {
 
     public RestaurantBillException() {
-        super("Too much orders");
+        super("Too many orders");
     }
 }
