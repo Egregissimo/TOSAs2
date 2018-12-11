@@ -8,7 +8,7 @@
 		<property name="fileExtensions" value="java" />
 	</module>
 	<module name="FileLength" /> <!-- SLOC massima dei file -->
-	<module name="FileTabCharacter" /> <!-- Non ci devono essere \tab oltre a quelli inseriti dall'editor -->
+	<module name="FileTabCharacter" />  <!-- Non ci devono essere \tab oltre a quelli inseriti dall'editor -->
 	<module name="TreeWalker">
 		<module name="BooleanExpressionComplexity" /> <!-- Ogni espressione booleana non deve avere più di 3 condizioni -->
 		<module name="CyclomaticComplexity" /> <!-- Non possono esserci più di 10 if, for, while... -->

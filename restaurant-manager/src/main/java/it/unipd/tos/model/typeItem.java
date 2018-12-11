@@ -5,6 +5,5 @@
 package it.unipd.tos.model;
 
 public enum typeItem {
-	PIZZA,
-	PRIMI;
+    PIZZA, PRIMI;
 }

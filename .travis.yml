@@ -3,7 +3,6 @@ group: edge
 language: java
 sudo: required
 jdk: openjdk8
-
 cache:
 directories:
 - $HOME/.m2
