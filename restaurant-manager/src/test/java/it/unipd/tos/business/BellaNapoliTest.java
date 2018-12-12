@@ -33,7 +33,7 @@ public class BellaNapoliTest {
     /*
      * Insieme che supera i 20 ordini. Gli ordini sono 23
      */
-    public List<MenuItem> orderWithError() {
+    public static List<MenuItem> orderWithError() {
         return Arrays.asList(new MenuItem(typeItem.PIZZA, "Margherita", 5.5),
                 new MenuItem(typeItem.PIZZA, "Margherita", 5.5), new MenuItem(typeItem.PIZZA, "Margherita", 5.5),
                 new MenuItem(typeItem.PIZZA, "Margherita", 5.5), new MenuItem(typeItem.PIZZA, "Margherita", 5.5),
@@ -90,6 +90,20 @@ public class BellaNapoliTest {
                 new MenuItem(typeItem.PRIMI, "Spaghetti", 10.5), new MenuItem(typeItem.PRIMI, "Spaghetti", 10.5),
                 new MenuItem(typeItem.PRIMI, "Spaghetti", 10.5));
     }
+    
+    /*
+     * Ordine normale che non contiene eccezioni
+     */
+    public static List<MenuItem> normalOrder() {
+        return Arrays.asList(new MenuItem(typeItem.PIZZA, "Margherita", 5.5),
+                new MenuItem(typeItem.PIZZA, "Margherita", 5.5), new MenuItem(typeItem.PIZZA, "Margherita", 5.5),
+                new MenuItem(typeItem.PIZZA, "Margherita", 5.5), new MenuItem(typeItem.PIZZA, "Margherita", 5.5),
+                new MenuItem(typeItem.PIZZA, "Margherita", 5.5), new MenuItem(typeItem.PIZZA, "Margherita", 5.5),
+                new MenuItem(typeItem.PIZZA, "Margherita", 5.5), new MenuItem(typeItem.PIZZA, "Margherita", 5.5),
+                new MenuItem(typeItem.PRIMI, "Spaghetti", 10.5), new MenuItem(typeItem.PRIMI, "Spaghetti", 10.5),
+                new MenuItem(typeItem.PRIMI, "Spaghetti", 10.5), new MenuItem(typeItem.PRIMI, "Spaghetti", 10.5)
+                );
+    }
 
     @Test(expected = RestaurantBillException.class)
     public void exeptionTest() throws RestaurantBillException {
@@ -103,9 +117,9 @@ public class BellaNapoliTest {
     }
 
     @Parameters
-    public static Collection data() {
+    public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] { { orderToCountPizzas(), 92.5 }, { orderToHaveDiscount(), 96.425 },
-                { orderToRemovePizzaAndDiscount(), 102.125 } });
+                { orderToRemovePizzaAndDiscount(), 102.125 }, { normalOrder(), 91.5} });
     }
 
     private List<MenuItem> input;
