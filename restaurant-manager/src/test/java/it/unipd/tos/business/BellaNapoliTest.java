@@ -104,6 +104,13 @@ public class BellaNapoliTest {
                 new MenuItem(typeItem.PRIMI, "Spaghetti", 10.5), new MenuItem(typeItem.PRIMI, "Spaghetti", 10.5)
                 );
     }
+    
+    /*
+     * Ordine vuoto
+     */
+    public static List<MenuItem> emptyOrder() {
+        return Arrays.asList();
+    }
 
     @Test(expected = RestaurantBillException.class)
     public void exeptionTest() throws RestaurantBillException {
@@ -119,7 +126,7 @@ public class BellaNapoliTest {
     @Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] { { orderToCountPizzas(), 92.5 }, { orderToHaveDiscount(), 96.425 },
-                { orderToRemovePizzaAndDiscount(), 102.125 }, { normalOrder(), 91.5} });
+                { orderToRemovePizzaAndDiscount(), 102.125 }, { normalOrder(), 91.5}, {emptyOrder(), 0} });
     }
 
     private List<MenuItem> input;
